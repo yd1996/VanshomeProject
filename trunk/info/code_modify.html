@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../css/common.css" rel="stylesheet" type="text/css" />
+<script>
+(function modify_code () {
+	var old_code = document.getElementById("old_code").value;
+	var new_code = document.getElementById("new_code").value;
+	var repeat_code = document.getElementById("repeat_code").value;
+	
+	if (old_code=="" || new_code=="" || repeat_code=="") {
+		alert("请输入完整的修改内容！");
+		return;
+	}
+	
+	if (new_code != repeat_code) {
+		alert("两次新密码不匹配！");
+		return;
+	}
+	
+	$.ajax({
+		async:false,
+		type:"POST",
+		url:"", //TODO
+		dataType:"text",
+		data:{},  //TODO
+		success: function (text) {
+			alert(text);
+		}
+	});
+	
+	window.location.reload();
+});
+</script>
+
+<title>无标题文档</title>
+</head>
+
+<body>
+<div>
+	<h1>密码修改</h1>
+</div>
+
+<table align="left" border="0">
+    <tr>
+        <td align="left"> 旧密码 </td>
+        <td><input id="old_code" type="text" align="left" /></td>
+    </tr>
+    <tr>
+        <td align="left"><label title="new_code" style="text-align:left;">新密码</label></td>
+        <td><input id="new_code" type="text" align="left" /></td>
+    </tr>
+    <tr>
+        <td align="left"><label title="repeat_code" style="text-align:left;">再次输入新密码</label></td>
+        <td><input id="repeat_code" type="text" align="left" /></td>
+    </tr>
+    <tr>
+        <td><input type="button" align="center" value="提交" style="width:150px; height:30px; font-size:14px; text-align:center; margin:0; background-color:#03F; color:#FFF" onclick="modify_code()"/></td>
+    </tr>
+</table>
+</body>
+</html>

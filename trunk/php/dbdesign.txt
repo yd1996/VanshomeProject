@@ -1,0 +1,249 @@
+User(user_id,user_name,default_name,default_email,password,person_note,icon_str,is_man,birth_time,
+      address,qq,phone,microblog,email,score,is_personal);
+Task(task_id,publish_time,owner_id,owner_name,deadline,hunter_id,hunter_name,task_type,
+     state,description,module,module_type,social_detail,keyword,college,institute,is_man,
+	 reward_type,good_type,reward_note,reward_number,reward_state);
+Team(team_id,team_name,team_rank,team_slogan,team_logo,team_note,member_num,setup_time,
+     first_leader_id,first_leader_name,leader_id,leader_name);
+School_Info(id,province,college,institute);
+Account_Item(item_id,item_time,task_id,task_type,task_small_type,task_content,is_income,role,
+             reward_content,reward_number,negotient_id,negotient_name);
+Message(message_id,user_id,type,content,link,read_state);
+Area(name,type,logo);
+Record(record_id,record_time,task_id,task_type,task_content,reward_condition,author_type,author_id,
+      assistant_type,assistant_id);
+
+create database vanshome;
+use database vanshome;
+create table User(
+    user_id varchar(20) not null,
+	user_name varchar(20) not null,
+	default_phone varchar(20) default null,
+	default_email varchar(30) default null,
+	password varchar(20) not null,
+	person_note text default null,
+	icon_str text not null,
+	is_man bool not null,
+	birth_time date default null,
+	address varchar(30) default null,
+	qq varchar(20) default null,
+	phone varchar(20) default null,
+	microblog varchar(20) default null,
+	email varchar(20) default null,
+	score double default 0.0,
+	is_personal bool not null,
+	primary key(user_id) 
+) default character set utf8;
+
+create table Task(
+    task_id varchar(20) not null,
+	publish_time timestamp not null,
+	owner_id varchar(20) not null,
+	owner_name varchar(20) not null,
+	deadline timestamp not null,
+	hunter_id varchar(20) default null,
+	hunter_name varchar(20) default null,
+	task_type integer not null,
+	state integer not null,
+	description text default null,
+	module integer not null,
+	module_type integer not null,
+	social_detail integer default null,
+	keyword varchar(50) not null,
+	college varchar(20) default null,
+	institute varchar(20) default null,
+	is_man bool default false,
+	reward_type integer not null,
+	good_type varchar(20) default null,
+	reward_note text default null,
+	reward_number double not null,
+	reward_state integer not null,
+	primary key(task_id)
+) default character set utf8;
+
+create table Team(
+    team_id varchar(20) not null,
+	team_name varchar(20) not null,
+	team_rank integer not null,
+	team_slogan text default null,
+	team_logo text default null,
+	team_note text default null,
+	member_num integer not null,
+	setup_time date not null,
+	first_leader_id varchar(20) not null,
+	first_leader_name varchar(20) not null,
+	leader_id varchar(20) not null,
+	leader_name varchar(20) not null,
+	primary key(team_id)
+) default character set utf8;
+
+create table School_Info(
+    id integer not null,
+	province varchar(10) not null,
+	college varchat(10) not null,
+	institute varchar(10) not null,
+	primary key(id)
+) default character set utf8;
+
+create table Account_Item(
+    item_id varchar(20) not null,
+	item_time timestamp not null,
+	task_id varchar(20) not null,
+	task_type integer not null,
+	task_small_type integer not null,
+	task_content text not null,
+	is_income bool not null,
+	role integer not null,
+	reward_content text not null,
+	reward_number double not null,
+	negotient_id varchar(20) not null,
+	negotient_name varchar(20) not null,
+	primary key(item_id)
+) default character set utf8;
+
+create table Message(
+    message_id varchar(20) not null,
+	user_id varchar (20) not null,
+	type integer not null,
+	content text not null,
+	link text default null,
+	read_state bool not null,
+	primary key(message_id)
+) default character set utf8;
+
+create table Area(
+    name varchar(10) not null,
+	type integer not null,
+	logo text default null,
+	primary key(name)
+) default character set utf8;
+
+create table Record(
+    record_id varchar(20) not null,
+	record_time timestamp not null,
+	task_id varchar(20) not null,
+	task_type integer not null,
+	task_content text default null,
+	reward_condition text not null,
+	author_type integer not null,
+	author_id varchar(20) not null,
+	assistant_type integer not null,
+	assistant_id varchar(20) not null,
+	primary key(record_id)
+) default character set utf8;
+
+create table Interest(
+     user_id varchar(20) not null,
+	 name varchar(20) not null,
+	 primary key(user_id,name)
+) default character set utf8;
+
+create table Education(
+     user_id varchar(20) not null,
+	 school_id varchar(20) not null,
+	 year integer not null,
+	 primary key(user_id,year)
+) default character set utf8;
+
+create table Join(
+     user_id varchar(20) not null,
+	 team_id varchar(20) not null,
+	 is_leader bool not null default false,
+	 is_manager bool not null default false,
+	 primary key(user_id,team_id)
+) default character set utf8;
+
+create table Apply_To_Join(
+     user_id varchar(20) not null,
+	 team_id varchar(20) not null,
+	 apply_time timestamp not null
+) default character set utf8;
+
+create table Account(
+     user_id varchar(20) not null,
+	 item_id varchar(20) not null,
+	 item_date date not null,
+	 is_income bool not null,
+	 primary key(item_id)
+) default character set utf8;
+
+create table Send(
+     user_id varchar(20) not null,
+	 message_id varchar(20) not null,
+	 is_sent varchar(20) not null,
+	 primary key(message_id)
+) default character set utf8;
+
+create table Task_Attention(
+     user_id varchar(20) not null,
+	 task_id varchar(20) not null,
+	 is_over bool not null,
+	 primary key (user_id,task_id)
+) default character set utf8;
+
+create table Task_Apply(
+     user_id varchar(20) not null,
+	 task_id varchar(20) not null,
+	 apply_time timestamp not null,
+	 note text default null,
+	 state integer not null,
+	 file_id varchar(20) not null,
+	 primary key(user_id,task_id)
+) default character set utf8;
+
+create table File(
+     file_id varchar(20) not null,
+	 file_path text not null,
+	 file_type integer not null,
+	 primary key(file_id)
+) default character set utf8;
+Interest(user_id,name);
+Education(user_id,school_id,year);
+Join(user_id,team_id,is_leader,is_manager);
+Apply_To_Join(user_id,team_id,apply_time);
+Account(user_id,item_id,item_date,is_income);
+Send(user_id,message_id,is_sent);
+Task_Attention(user_id,task_id,is_over);
+Task_Apply(user_id,task_id,apply_time,note,state,file_id);
+File(file_id,file_path,file_type);
+Task_Publish(user_id,task_id,publish_time,state);
+
+create table Task_Publish(
+     user_id varchar(20) not null,
+	 task_id varchar(20) not null,
+	 publish_time timestamp not null,
+	 state integer not null,
+	 primary key(user_id,task_id)
+) default character set utf8;
+
+create table Task_Invite(
+     user_id varchar(20) not null,
+	 invitor_id varchar(20) not null,
+	 task_id varchar(20) not null
+) default character set utf8;
+
+create table Relationship(
+     user_id varchar(20) not null,
+	 user_type integer not null,
+	 goal_id varchar(20) not null,
+	 goal_type integer not null,
+	 is_attention bool not null default true,
+	 attention_level integer default null,
+	 primary key(user_id,goal_id)
+) default character set utf8;
+
+create table Comment(
+     id varchar(20) not null,
+	 content text not null,
+	 task_id varchar(20) not null,
+	 user_id varchar(20) not null,
+	 primary key(id)
+) default character set utf8;
+
+create table Reply(
+     id varchar(20) not null,
+	 content text not null,
+	 comment_id varchar(20) not null,
+	 user_id varchar(20) not null,
+	 primary key(id)
+) default character set utf8;

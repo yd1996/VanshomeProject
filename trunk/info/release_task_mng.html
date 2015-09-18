@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../css/common.css" />
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../js/info/release_task.js"></script>
+<script type="text/javascript" src="../js/util.js"></script>
+
+<style type="text/css">
+    * {
+        text-align: left;
+    }
+    .item {
+        min-height:200px;
+        font-size: 16px;
+        text-align: left;
+        color: green;
+        margin-bottom: 3px;
+        border-bottom: 3px;
+        border-color: blue;
+    }
+    .item .item_title .title_txt{
+        color:red;
+        font-size: 20px;
+        text-align: left;
+
+    }
+    .item .item_state .state_txt{
+        font-size: 15px;
+        color:black;
+        text-align: left;
+
+    }
+    .item .item_content .content_txt{
+        font-size: 18px;
+        color: black;
+        
+    }
+    .item .item_footer .footer_txt{
+        font-size: 15px;
+    }
+
+    .item_title {
+        
+    }
+
+    .item_state {
+        
+    }
+    .item_content {
+        background:;
+    }
+    textarea {
+            overflow-y:hidden;
+            overflow-x:hidden;
+            border:0;
+            resize:none;
+    }
+
+}
+</style>
+<title>已发布任务管理</title>
+</head>
+
+<body>
+<div>
+	<!--当前页标题-->
+    <div>
+    	<ul>
+        	<li class="info_grade">已发布任务列表</li>
+        </ul>
+    </div>
+    
+    <!-- 排序项-->
+    <div>
+    
+    </div>
+    <!--内容-->
+    <div id="task_list">
+    
+    </div>
+    
+    <!--翻页-->
+    <div style="display:none;">
+    	<button id="last_page">上一页</button>
+        <label id="current_page" title="第1页">第1页</label>
+        <button id="next_page" value="下一页">下一页</button>
+    </div>
+    
+</div>
+
+<div id="item_model" style="display:none;">
+	<div class="item">
+    	<div class="item_title">
+        	<span>您发布了需求</span>
+            <label><a class="title_txt"href="#">找校园卡！</a></label>
+        </div>
+        <div class="item_state">
+        	<label class="state_txt">赏金类型：物品；赏金内容：二手手表；状态：已结束</label>
+        </div>
+        <div class="item_content">描述:<br/>
+        	<textarea readonly class="content_txt" style="resize:none; background-color:#cccccc;" cols="80" rows="5" overflow="hidden">rt,找回失踪的校园卡</textarea>
+        </div>
+        <div class="item_footer">
+        	<div>
+            	<img src="../img/clock.png" height="16" width="16"/>
+                <label class="time_txt">2014-6-4</label>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<script>
+$(document).ready(function () {
+    get_first_task_list(getUrlArg(window.location.href, 'user_id'));
+});
+</script>
+</div>
+</body>
+
+</html>

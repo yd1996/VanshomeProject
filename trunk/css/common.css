@@ -1,0 +1,168 @@
+/*
+*   此样式为公共样式，有导航条及头部的必须引入
+*/
+*{
+    padding: 0px;
+    margin: 0px;
+	text-align:center;
+}
+body{
+    line-height: 1.6;
+    font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
+    color: #222;
+    font-size: 14px;
+}
+
+input {
+	text-align:left;
+	position:relative;
+	left:5px;
+}
+
+.content_title {
+    float: left;
+    clear: both;
+    margin-left: 100px;
+}
+
+.header{
+    height: 35px;
+    line-height: 35px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header a{
+    color: #b5b5b5;
+    text-decoration: none;
+    font-size: 12px;
+}
+.user-wrap-left{
+    font-size: 12px;
+    color: #b5b5b5;
+    position: absolute;
+    min-width: 200px;
+}
+.user-wrap{
+    float: right;
+    min-width: 150px;
+}
+.user-wrap a{
+    padding: 0 10px 0 10px;
+    display: block;
+    float: left;
+    text-align: center;
+}
+.user-wrap a:hover{
+    background: #000000;
+}
+/*logo图片，导航条*/
+.logo_header_id{
+    margin-bottom: 3px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 45px;
+    line-height: 45px;
+}
+
+.logo-div-left{
+	float:left;
+    background-image:url("../img/menu1_logo.png");
+    background-repeat: no-repeat;
+    width: 250px;
+    height: 50px;
+}
+.menu-div-right{
+    float: right;
+}
+#menu{
+    list-style: none;
+}
+ul#menu a{
+    color: #000000;
+    text-decoration: none;
+}
+.two_grade{
+    float: left;
+    margin-right: 5px;
+}
+.two_grade a{
+    display: block;
+    text-align: center;
+    min-width: 90px;
+}
+.two_grade a:hover{
+    border-bottom: 3px #FC9B00 solid;
+}
+.selected a{
+    color: #FC9B00 !important;
+    border-bottom: 3px #FC9B00 solid;
+}
+.help-get-start{
+    position: relative;
+}
+.help-get-start span{
+    position: absolute;
+    top: 18px;
+    left: 30px;
+    z-index: 1000;
+}
+.help-get-start span>img{
+    border: 0px;
+}
+/*底部版权信息*/
+.footer{
+	text-align:center;
+    color: #808080;
+    border-top: 1px solid #dfdfdf;
+    text-align: center;
+    font-size: 12px;
+    line-height: 10px;
+	width:100%;
+}
+.footer>p{
+    margin-top: 20px;
+}
+
+.fullBtnBlue{display: inline-block;height: 50px;width: 200px;font-size: 20px;line-height: 50px;text-align: center;margin-bottom: 20px;outline: none;cursor: pointer;background-color: #32a5e7;color: #fff;}
+
+textarea {
+	border-color:blue;
+	border:thin;
+	word-spacing:normal;
+	text-align:left;
+	text-decoration:blink;
+	text-shadow:none;
+	border-width:thin;
+	overflow:scroll;
+}
+
+input.[type="text"] {
+	word-spacing:normal;
+	volume:medium;
+	text-align:left;
+	overflow:visible;
+}
+
+
+.info_grade {
+	margin:5px;
+    font-size:20px;
+    text-align:left;
+    border-bottom: 3px #FC9B00 solid;
+}
+
+.oneline {
+	width:100%;
+	height:auto;
+	position:relative;
+    float: left;
+	clear:both;
+}
+.info_label {
+	font-size:18px;
+    color: green;
+}
+
+.normalInput
+{font-size: 16px;padding: 6px 0;height: 20px;}

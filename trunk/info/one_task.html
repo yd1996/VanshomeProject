@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="../js/info/one_task.js"></script>
+	<script type="text/javascript" src="../js/util.js"></script>
+
+	<title>单条任务详情</title>
+	<style type="text/css">
+
+		body {
+			text-align: left;
+		}
+		.container {
+			margin: 0px;
+			margin-left: 100px;
+			margin-right: 100px;
+			margin-bottom: 50px;
+			margin-top: 50px;
+		}
+		h2 {
+			color: green;
+			opacity: 0.5;
+			font-size: 18px;
+			text-align: left;
+
+		}
+		textarea {
+			overflow-y:hidden;
+			overflow-x:hidden;
+			border:0;
+			resize:none;
+		}
+
+		.left {
+			float: left;
+			clear: both;
+		}
+		#apply_mng li {
+			float: left;
+			clear: both;
+			text-align: left;
+		}
+	</style>
+</head>
+
+<body>
+<!--读取url中的任务编号-->
+<script type="text/javascript">
+	var task_id=getUrlArg(window.location.href, 'task_id');
+	var user_id = getUrlArg(window.location.href, 'user_id');
+</script>
+
+<div class="container">
+	<div>
+		<h1 id="task_title" class="info_grade">任务标题</h1>
+		<span>&emsp;&emsp;&emsp;发布于&emsp;</span><span id="publish_time"></span>
+	</div>
+	<!--操作列表-->
+	<div>
+		
+	</div>
+
+	<div>
+		<h2>任务说明</h2>
+		<textarea id="task_dcrt" readonly="true" class="left" cols="80" rows="5">默认内容</textarea>
+	</div>
+
+	<div class="left">
+		<h2 style="display:inline;">截止日期&emsp;	</h2>
+		<span id="task_ddl">某年某月</span>
+		<br/>
+	</div>
+	<div class="left">
+		<h2 style="display:inline;">悬赏方式&emsp;	</h2>
+		<span id="task_type">默认方式	</span>
+		<br/>
+	</div>
+	<div class="left">
+		<h2 style="display:inline;">奖励类型&emsp;	</h2>
+		<span id="reward_type">默认类型</span>
+		<h2 style="display:inline;">&emsp;奖励内容	</h2>
+		<span id="reward_value">默认内容</span>
+	</div>
+	<div class="left">
+		<h2>奖励说明</h2>
+		<textarea id="reward_dcrt" readonly="true" cols="80" rows="5">默认说明</textarea>
+	</div>
+
+	<div class="left">
+		<h2>交稿</h2>
+		<ul id="apply_mng">
+
+		</ul>
+	</div>
+	<ul id="apply_model" style="display:none;">
+	<li class="apply_item">
+				<label>处理&emsp;	</label>
+				<input type="button" value="中标" />
+				<input type="button" value="入围" />
+				<input type="button" value="谢谢" />
+				<br/>
+				<label>交稿人&emsp;	</label><label class="apply_name">默认用户名</label>
+				<br/>
+				<textarea readonly="true" cols="80" rows="5" class="apply_dcrt">默认交稿说明</textarea>
+				<div style="text-align:left;">
+					<img src="../img/clock.png" height="16" width="16" />
+					<label class="apply_time">YYYY-MM-DD</label>
+					<label>		&emsp;状态：</label>
+					<label class="apply_state">默认状态</label>
+					
+				</div>
+	</li>
+	</ul>
+</div>
+<script type="text/javascript">
+	get_task_content(user_id, task_id);//tmp
+	get_task_apply(task_id);
+</script>
+</body>
+
+</html>

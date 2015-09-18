@@ -1,0 +1,91 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="Content-Language" content="zh-cn"/><title>校园万事屋</title>
+
+<link rel="stylesheet" href="css/common.css" type="text/css"/>
+<link rel="stylesheet" href="css/index.css" type="text/css"/>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/util.js"></script>
+<script type="text/javascript" src="js/check_login.js"></script>
+
+<script type="text/javascript">
+	function SetCwinHeight()
+{
+var cwin=document.getElementById("cwin");
+if (document.getElementById)
+{
+if (cwin && !window.opera)
+{
+if (cwin.contentDocument && cwin.contentDocument.body.offsetHeight)
+cwin.height = cwin.contentDocument.body.offsetHeight; 
+else if(cwin.Document && cwin.Document.body.scrollHeight)
+cwin.height = cwin.Document.body.scrollHeight;
+}
+}
+}
+</script>
+
+<script>
+var user_name;
+var user_id;
+user_name = getUrlArg(window.location.href, 'user_name');
+user_id = getUrlArg(window.location.href, 'user_id');
+</script>
+
+</head>
+
+<body style="overflow-y:auto;">
+<script type="text/javascript" src="frames/header.js">
+	</script>
+<div style="width: 100%">
+    <!--头部-->
+    
+    <!--logo-->
+    <div class="logo_header_id" id="logo_header_id">
+        <div class="logo-div-left"></div>
+        <div class="menu-div-right">
+            <ul id="menu">
+                <li class="two_grade"><a class="mp" href="#">首页</a></li>
+                <li class="two_grade selected"><a href="#">任务大厅</a></li>
+                <li class="two_grade"><a href="#">事务所根据地</a></li>
+                <li class="two_grade"><a href="#">活动资讯</a></li>
+                <li class="two_grade"><a href="#">校园论坛</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div>
+    	<iframe id="center" width="100%" align="center" height="1000" frameborder="0" scrolling="no" src="workmarket.html"></iframe>
+    </div>
+    <!--版权信息-->
+    <script type="text/javascript" src="frames/footer.js">
+	</script>
+    
+</div>
+
+<!-------------------------------------------------end---------------------------------------------------------------->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.flexslider').flexslider({
+            directionNav: true,
+            pauseOnAction: false
+        });
+    });
+	
+</script>
+<script type="text/javascript">
+function init () {
+    $("#center").attr("src", "workmarket.html"+getArg());
+	$(".mp").attr("href", "index3.html"+getArg());
+    check_login();
+}
+    window.onload = init();
+</script>
+</body>
+</html>

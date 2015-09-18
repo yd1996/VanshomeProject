@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style type="text/css">
+#inline {display:inline;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="Content-Language" content="zh-cn"/>
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>校园万事屋</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+</head>
+
+<body>
+<!-- TemplateBeginEditable name="mainPage" -->
+<div class="inline">
+<div align="left">
+  <p class="inline">James，hi，欢迎您~</p>
+</div>
+	<div>
+    	<a href="#">login</a>
+        <a href="#">register</a>
+        <a href="#">nagivation</a>
+    </div>
+</div>
+<!-- TemplateEndEditable -->
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../css/common.css" />
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../js/util.js"></script>
+
+<title>无标题文档</title>
+<style type="text/css">
+    .container {
+        margin: 5px;
+    }
+    .left {
+        float: left;
+        clear: both;
+    }
+    .align {
+        text-align: right;
+    }
+
+</style>
+</head>
+
+<body>
+<div class="container">
+    <div>
+        <ul>
+            <li class="info_grade">已发布任务列表</li>
+        </ul>
+    </div>
+        <div class="left">
+        <form>
+            <input class="fullBtnBlue" style="width:100px; height:50px;" type="button" value="编辑资料" />
+        </form>
+        </div>
+        <div class="left"> <span class="info_label" style="color:green;">账户名&emsp;&emsp;</span> <span id="binfo_account">abc123</span> </div>
+        <div class="left"> <span class="info_label">昵称&emsp;&emsp;</span> <span id="binfo_name" class="align">KingYL</span> </div>
+        <div class="left"> <span class="info_label">学校院系&emsp;&emsp;</span> <span id="binfo_schlaca" class="align">南京大学 软件学院</span> </div>
+        <div class="left"> <span class="info_label">个人说明&emsp;&emsp;</span> <span id="binfo_prv_dcrt" class="align">暂无.</span> </div>
+</div>
+<script>
+var user_name = getUrlArg(window.location.href, 'user_name');
+var user_id = getUrlArg(window.location.href, 'user_id');
+$("#binfo_name").text(user_name);
+$("#binfo_account").text(user_id);
+</script>
+</body>
+</html>

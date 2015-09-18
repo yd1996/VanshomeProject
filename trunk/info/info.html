@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link  rel="stylesheet" href="../css/info.css" type="text/css" />
+<link rel="stylesheet" href="../css/common.css" type="text/css" />
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../js/check_login.js"></script>
+<script type="text/javascript" src="../js/util.js"></script>
+
+
+<title>个人信息界面</title>
+</head>
+
+<body>
+<script src="../frames/header.js" language="javascript" type="text/javascript"></script>
+<div style="position:relative;float:left;">
+	<a class="mp" href="../index3.html"><img src="../img/menu1_logo.png" /></a>
+</div>
+<div class="container"> 
+    <!--左边导航栏-->
+    <div class="info_operation" style="width:25%;">
+        <div class="leftsidebar_box">
+            <div class="info_user_thumbnail">
+                <div class="head_icon" style="display:inline;"><img src="../img/default_head_icon.JPG" width="140" height="119" align="left" class="head_icon" /></div>
+                <div class="simple_info">
+                    <ul style="list-style:none;">
+                        <li id="user_name_left_top">用户名</li>
+                        <li><span>信用等级:</span><span id="belief_level">无</span></li>
+                        <li><span>荣誉称号:</span><span id="proud_name">无</span></li>
+                    </ul>
+                </div>
+                <div style="width:100%;">
+                    
+                    <a id="publish" class="fullBtnBlue" type="submit" value="发布任务" style="width:100px; height:50px; margin:5px;" href="#">发布任务</a>
+                   
+                </div>
+            </div>
+            <div class="line"></div>
+            <dl class="system_log">
+                <dt id="private_profile" onClick="changeImage()">个人资料<img src="images/left/select_xl01.png" /></dt>
+                <dd id="basic_info" class="first_dd">基本信息</dd>
+                <dd id="connect_way">联系方式</dd>
+                <dd id="code_modify">密码修改</dd>
+            </dl>
+            <dl class="custom">
+                <dt onClick="changeImage()">绑定账号<img src="images/left/select_xl01.png"></dt>
+                <dd class="first_dd">绑定手机</dd>
+                <dd>绑定邮箱</dd>
+            </dl>
+            <dl class="unslidable">
+                <dt id="release_task_mng">已发布任务</dt>
+            </dl>
+            <dl class="unslidable">
+                <dt id="apply_task_mng">已受理任务</dt>
+            </dl>
+            <dl class="cloud">
+                <dt id="team_mng">团队管理<img src="images/left/select_xl01.png"></dt>
+                <dd id="current_team" class="first_dd">查看当前团队</dd>
+                <dd id="join_team">加入新团队</dd>
+                <dd id="create_team">创建新团队</dd>
+            </dl>
+            <dl class="unslidable">
+                <dt id="care">关注</dt>
+            </dl>
+            <dl class="unslidable">
+                <dt id="collection">收藏</dt>
+            </dl>
+            <dl class="unslidable">
+                <dt id="msg_center">消息中心</dt>
+            </dl>
+        </div>
+    </div>
+    <!--右边内容显示栏-->
+    <div class="info_content" style="width:75%;">
+          <iframe id="right_content" src="basic_info.html" width="100%" height="1000px" frameborder="0"></iframe>;
+    </div>
+    
+    <div style="width:1000px; overflow:hidden;">
+<script language="javascript" type="text/javascript" src="../frames/footer.js" >
+</script>
+</div>
+    
+</div>
+
+<script type="text/javascript">
+$(".leftsidebar_box dt").css({"background-color":"#3992d0"});
+$(".leftsidebar_box dt img").attr("src","../img/info/select_xl01.png");
+$(function(){
+	$(".leftsidebar_box dd").hide();
+	$(".leftsidebar_box dt").click(function(){
+		$(".leftsidebar_box dt").css({"background-color":"#3992d0"})
+		$(this).css({"background-color": "#317eb4"});
+		$(this).parent().find('dd').removeClass("menu_chioce");
+		$(".leftsidebar_box dt img").attr("src","../img/info/select_xl01.png");
+		$(this).parent().find('img').attr("src","../img/info/select_xl.png");
+		$(".menu_chioce").slideUp(); 
+		$(this).parent().find('dd').slideToggle();
+		$(this).parent().find('dd').addClass("menu_chioce");
+	});
+})
+</script>
+
+<script type="text/javascript" src="../js/info.js"></script>
+
+<script type="text/javascript">
+    var user_id = getUrlArg(window.location.href, 'user_id');
+    var user_name = getUrlArg(window.location.href, 'user_name');
+	$("#logout").attr("href", "../login.html");
+	$("#user_name_left_top").text(user_name);
+	$(".mp").attr("href", "../index3.html?user_name="+user_name+"&user_id="+user_id);
+    $("#publish").attr("href", "task_out.html?user_id="+user_id+"&user_name="+user_name);
+	$("#right_content").attr("src", "basic_info.html?user_id="+user_id+"&user_name="+user_name);
+    check_login();
+</script>
+</body>
+</html>

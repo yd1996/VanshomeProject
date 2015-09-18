@@ -1,0 +1,132 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="Content-Language" content="zh-cn"/><title>校园万事屋</title>
+
+<link rel="stylesheet" href="css/common.css" type="text/css"/>
+<link rel="stylesheet" href="css/index.css" type="text/css"/>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/util.js"></script>
+<script src="../js/check_login.js"></script>
+<script type="text/javascript" src="js/check_login.js"></script>
+
+<style type="text/css">
+    .left {
+        float: left;
+        clear: both;
+        margin-left: 100px;
+    }
+</style>
+
+</head>
+
+<body>
+<script type="text/javascript" src="frames/header.js">
+	</script>
+<script>
+
+
+</script>
+<div style="width: 100%; margin:0px; ">
+    <!--头部-->
+    
+    <!--logo-->
+    <div class="logo_header_id" id="logo_header_id">
+        <div class="logo-div-left"></div>
+        <div class="menu-div-right">
+            <ul id="menu">
+                <li class="two_grade selected"><a href="index3.html">首页</a></li>
+                <li class="two_grade"><a id="task_room" href="task_room.html?">任务大厅</a></li>
+                <li class="two_grade"><a href="#">事务所根据地</a></li>
+                <li class="two_grade"><a href="#">活动资讯</a></li>
+                <li class="two_grade"><a href="#">校园论坛</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div>
+       	<div style="position:relative; top:10%; left:5%; width:20%">
+                <a id="publish" class="fullBtnBlue" href="info/task_out.html" style="text-decoration:none;">发布任务</a>
+       	</div>
+    </div>
+    <!--分类导航-->
+    
+    <div id="sort_nagivation">
+         <h2 class='left' >
+            校园任务
+            </h2>
+    	<div>
+            <div class="left">
+            	<ul>
+            	<li style="display:inline;"><a href="#" class="rootSortItem">学习资料</a></li>
+                <li style="display:inline;"><a href="#" class="rootSortItem">作业帮助</a></li>
+                <li style="display:inline;"><a href="#" class="rootSortItem">课程辅导</a></li> 
+                <li style="display:inline;"><a href="#" class="rootSortItem">日常琐事</a></li>
+                <li style="display:inline;"><a href="#" class="rootSortItem">校园活动</a></li>
+                <li style="display:inline;"><a href="#" class="rootSortItem">课外活动</a></li>
+                </ul>
+            </div>
+             <div class="left">
+            	<ul> 
+                <li style="display:inline;"><a href="#" class="rootSortItem">游戏代练</a></li>
+                <li style="display:inline;"><a href="#" class="rootSortItem">课程设计</a></li>
+                <li style="display:inline;"><a href="#" class="rootSortItem">海报设计</a></li>
+                <li style="display:inline;"><a href="#" class="rootSortItem">感情专栏</a></li>
+                <li style="display:inline;"><a href="#" class="rootSortItem">实时委托</a></li>
+                <li style="display:inline;"><a href="#" class="rootSortItem">失物招领</a></li>
+                </ul>
+            </div>
+        	
+        </div>
+         
+    </div>
+    <br class="left"/>
+    <br class="left"/>
+    <br class="left"/>
+    <br class="left"/>
+    <br class="left"/><br class="left"/>
+    <br class="left"/><br class="left"/><br class="left"/><br class="left"/>
+     <br class="left"/><br class="left"/><br class="left"/><br class="left"/>
+      <br class="left"/><br class="left"/><br class="left"/><br class="left"/>
+    <!--内容-->
+    
+    <!--版权信息-->
+    
+</div>
+
+<!-------------------------------------------------end---------------------------------------------------------------->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.flexslider').flexslider({
+            directionNav: true,
+            pauseOnAction: false
+        });
+    });
+	function changeHeader () {
+		var h = document.getElementById("header_id");
+		h.innerHTML="<p>new Header</p>";
+	}
+</script>
+<script>
+var user_name;
+    var user_id;
+function init () {
+
+    user_name = getUrlArg(window.location.href, 'user_name');
+    user_id = getUrlArg(window.location.href, 'user_id');
+    $("#publish").attr("href", "info/task_out.html?user_name="+user_name+"&user_id="+user_id);
+    $("#task_room").attr("href", "task_room.html?user_name="+user_name+"&user_id="+user_id);
+    check_login();
+
+}
+
+window.onload = init;
+</script>
+
+</body>
+</html>
